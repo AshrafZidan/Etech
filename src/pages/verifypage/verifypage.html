@@ -1,0 +1,22 @@
+<ion-content padding class="veriy-form">
+
+    <form [formGroup]="verifyForm" (ngSubmit)="verify()">
+        <div class="infoHint animated fadeInDown">
+            <!-- <i class="fa fa-envelope-open-o"></i> -->
+          <img class="envolpe" src="assets/icon/Envelope.png">
+        </div>
+
+        <h5 class="v-head  animated fadeInDown text-center text-capitalize">
+          Thank you for your registration. <br>
+          Your account is currently under revision
+          and you will receive account activation
+          email very soon.
+
+        </h5>
+
+
+        <button (click)="openPage('LoginPage')" ion-button full clear type="button" class="app-white resendCodeBtn">BACK TO SIGN IN</button>
+
+    </form>
+
+</ion-content>

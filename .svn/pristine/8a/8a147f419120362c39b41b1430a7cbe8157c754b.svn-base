@@ -1,0 +1,224 @@
+page-filter {
+  .list-header{
+    margin: 0 !important;
+  }
+  .item-md , .item-ios{
+    padding-top: 0 !important; 
+  }
+  .titlle{
+    padding-left: 0;
+    padding-right: 0;
+  }
+ .label-md .iconss{
+    position: absolute;
+    right: 13px;
+  }
+  .label-ios .iconss{
+    position: absolute;
+
+    right: 20px;
+  }
+  ion-content{
+    padding: 5px !important;
+
+    ion-card{
+      .item-inner{
+        border-bottom: 1px solid #ccc !important;
+
+      }
+      padding: 0;
+      margin: 0;
+      width: 100% !important;
+      border: none !important;
+      box-shadow: none !important;
+
+
+    }
+    .titlle{
+      background: none !important;
+      // margin-left: 5px !important;
+      // margin-right: 5px;
+      // border: 5px solid red !important;
+      border: none !important;
+      /* padding-left: 0; */
+      padding-right: 10px;
+      padding-left: 13px;
+    }
+
+    .card {
+      box-shadow: none !important;
+      margin: 0;
+padding: 0;
+    }
+
+  .card-header{
+    background-color: white;
+    color: #000 !important;
+    padding: 0;
+    border: 0 !important;
+}
+.card-content {
+    padding: 0px 16px;
+    max-height: 0px;
+    // border-bottom: .5px solid #ccc;
+
+}
+.button-clear-ios {
+ margin-right: -15px;
+ font-size: 2rem;
+ color: #000 !important;
+}
+.label{
+  color: #000000;
+  font-weight: bold;
+  letter-spacing: .9px;
+  font-size: 17px;
+  // padding-left: 10px;
+  margin: 0;
+}
+.button-small-ios[icon-only] ion-icon{
+  color: #000 !important;
+}
+  }
+   .item-cover {
+    // border-bottom: 1px solid #c8c7cc !important;
+  }
+  .card-content{
+    padding: 10px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+
+  }
+  li.item{
+    background: rgba($color: #f5f5f5, $alpha: 1 ) !important;
+    padding-top: 5px;
+    padding: 12px;
+
+    border-bottom: 1px solid #ccc;
+
+
+  }
+  ul{
+    padding-left: 3px;
+    margin-top: 0;
+        margin-bottom: 0px;
+
+
+  }
+  ul label{
+    float: right;
+  }
+  .list-ios > .item-block{
+
+    margin-bottom: 0 !important;
+  }
+
+   .checkbox-checked {
+    border-color: $mainBackground;
+    background-color: $mainBackground;
+    width: 18px;
+    height: 18px;
+
+}
+
+.bran{
+  font-weight: normal !important;
+  font-size: 15px;
+  color: #4a4949 !important;
+  display: inline-flex;
+
+}
+.m-t-5{
+  margin-top: 5px;
+
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 13px;
+  right: 10px;
+  height:22px;
+  width: 22px;
+  background-color: #fff;
+  border: 1px solid;
+  border-color: #ccc;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.btns{
+
+  .apply{
+    border-radius: 5px;
+    font-weight: 600 !important;
+
+  }
+  .reset{
+    border: 1.4px solid #a29b9b;
+    background:transparent !important;
+    color: #000 !important;
+    font-weight: 600 !important;
+    border-radius: 5px;
+    box-shadow: none;
+  }
+}
+
+}
+.arrow-icn{
+      // margin-right: -9px !important;
+          // margin-right: 14px;
+
+
+}
+
+.ios{
+  .arrow-icn{
+          margin-right: 4px;
+              padding-right: 0 !important;
+    margin-right: 2px !important;
+
+
+
+}
+
+}

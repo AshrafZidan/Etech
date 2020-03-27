@@ -1,0 +1,33 @@
+import { NgModule } from '@angular/core';
+import { IonicPageModule } from 'ionic-angular';
+import { HttpModule } from '@angular/http';
+import { TranslateModule} from '@ngx-translate/core';
+
+
+
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////// General Classes /////////////////////////////////////////////
+import { Signup } from './signup';
+
+
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////// Providers /////////////////////////////////////////////
+import { AuthentcationServices } from './../../providers/authentcation-services';
+import { ProductsServiceProvider } from './../../providers/products-service/products-service';
+
+
+
+@NgModule({
+  declarations: [
+    Signup,
+  ],
+  imports: [
+    IonicPageModule.forChild(Signup),HttpModule,TranslateModule.forChild({})
+
+  ],
+  exports: [
+    Signup
+  ],
+  providers:[AuthentcationServices , ProductsServiceProvider]
+})
+export class SignupModule {}

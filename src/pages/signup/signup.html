@@ -1,0 +1,116 @@
+<ion-content padding class="signup-form">
+
+
+  <div class="logo animated fadeInDown">
+    <img src="assets/img/logo.png" alt="shuryan-logo">
+  </div>
+
+  <h3 class="title">Creat Account</h3>
+  <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+
+    <ion-list>
+
+      <!-- firstname field -->
+      <ion-item class="item1 animated fadeInDown">
+        <!-- <ion-label floating [style.transform-origin]="language === 'en' ?'left':''">
+                    <ion-icon [ngClass]="language === 'en' ?'iconEn':'iconAr'" name="ios-contact"></ion-icon>
+                    {{ 'userName' | translate }}
+                </ion-label> -->
+        <ion-input type="text" formControlName="firstname" placeholder="First Name" [(ngModel)]="firstName"></ion-input>
+      </ion-item>
+
+      <p class="validationHint" *ngIf="hasError('firstname', 'required')">{{ 'require' | translate }}</p>
+      <!-- <p class="validationHint" *ngIf="hasError('firstname', 'minlength')">{{ 'minLenght8' | translate }}</p> -->
+      <p class="validationHint" *ngIf="hasError('firstname', 'maxlength')">{{ 'maxLenght' | translate }}</p>
+
+
+      <!-- lastname. field -->
+
+      <ion-item class="item2 animated fadeInDown">
+       
+        <ion-input type="text" formControlName="lastname" placeholder="Last Name" [(ngModel)]="lastName"></ion-input>
+      </ion-item>
+
+      <p class="validationHint" *ngIf="hasError('lastname', 'required')">{{ 'require' | translate }}</p>
+      <!-- <p class="validationHint" *ngIf="hasError('lastname', 'minlength')">{{ 'minLenght8' | translate }}</p> -->
+      <p class="validationHint" *ngIf="hasError('lastname', 'maxlength')">{{ 'maxLenght' | translate }}</p>
+
+      <!-- email field -->
+
+      <ion-item class="item3 animated fadeInDown">
+       
+
+        <ion-input formControlName="useremail" [(ngModel)]="userEmail" type="email" placeholder="Email"></ion-input>
+      </ion-item>
+
+      <p class="validationHint" *ngIf="hasError('useremail', 'required')">{{ 'require' | translate }}</p>
+      <p class="validationHint" *ngIf="hasError('useremail', 'pattern')">Enter correct Email </p>
+      <p class="validationHint" *ngIf="hasError('useremail', 'minlength')">{{ 'minLenght11' | translate }}</p>
+
+      <!-- password field -->
+      <ion-item class="item4 animated fadeInDown">
+       
+        <ion-icon item-end [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
+        <ion-input placeholder="Password" [type]="passwordType" id="passordFiled" formControlName="password" [(ngModel)]="userPassword" required>
+        </ion-input>
+        
+
+      </ion-item>
+      <p class="validationHint" *ngIf="hasError('password', 'required')">{{ 'require' | translate }}</p>
+      <!-- <p class="validationHint" *ngIf="hasError('password', 'maxlength')">{{ 'maxLenght' | translate }}</p> -->
+      <p class="validationHint" *ngIf="hasError('password', 'minlength')">{{ 'minLenght8' | translate }}</p>
+      <p class="validationHint" *ngIf="hasError('password', 'maxlength')">{{ 'maxLenghtNumChar' | translate }}</p>
+
+
+      <!--confirm password field -->
+      <ion-item class="item4 animated fadeInDown">
+       
+        <ion-icon item-end [name]="confirmpasswordIcon" class="passwordIcon" (click)='hideShowConfirmPassword()'></ion-icon>
+        <ion-input placeholder="Confirm Password" [type]="confirmpasswordType" id="ConfirmpassordFiled" formControlName="confirmpassword" [(ngModel)]="userConfirmPassword" required>
+        </ion-input>
+        
+
+      </ion-item>
+      <!-- <p class="validationHint" *ngIf="hasError('confirmpassword', 'required')">{{ 'require' | translate }}</p> -->
+      <!-- <p class="validationHint" *ngIf="hasError('password', 'maxlength')">{{ 'maxLenght' | translate }}</p> -->
+      <!-- <p class="validationHint" *ngIf="hasError('confirmpassword', 'minlength')">{{ 'minLenght8' | translate }}</p> -->
+      <!-- <p class="validationHint" *ngIf="hasError('confirmpassword', 'maxlength')">{{ 'maxLenghtNumChar' | translate }}</p> -->
+      <p class="validationHint" *ngIf="signUpForm.controls.password.value !== signUpForm.controls.confirmpassword.value">Password Don't Match</p>
+
+      
+
+
+      <ion-item   class="item4 animated  checkbox fadeInDown ">
+
+          <li  *ngFor="let cat of Category ">
+        <input class="checkbox-custom myinput"  id="{{cat.id}}" formControlName="accountType"   (change)="check($event)" type="checkbox"  value ="{{cat.id}}" >
+        <label for="{{cat.id}}">{{cat.name}}</label>       
+        </li>
+
+
+      </ion-item>
+
+     
+
+<!-- 
+      <p class="validationHint" *ngIf="hasError('accounttype', 'required')">{{ 'require' | translate }}</p> -->
+
+
+     
+
+    </ion-list>
+    <!-- form Btns -->
+    <!-- [disabled]="!signUpForm.valid || (signUpForm.controls.password.value !== signUpForm.controls.confirmpassword.value)" -->
+
+    <button ion-button block class="sub app-white animated fadeInDown"  [disabled]="!signUpForm.valid || (signUpForm.controls.password.value !== signUpForm.controls.confirmpassword.value) " >Create Account</button>
+
+  </form>
+
+
+
+  <p class="login animated fadeInDown">
+    Alerady Have An Account ?
+    <button ion-button clear class="top" (click)="openPage('LoginPage')">Login</button>
+  </p>
+
+</ion-content>

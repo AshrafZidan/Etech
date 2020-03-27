@@ -1,0 +1,171 @@
+<!--
+  Generated template for the MenuPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-menu *ngIf="languageInSildClass === 'en'" [content]="content" dir="ltr" id="menuId" side="left">
+
+    <ion-content class="menuContent">
+
+        <ion-toolbar class="headermenu">
+            <img [style.float]="languageInSildClass == 'en' ?'left':'right'" src="assets/img/user4.png">
+            <span>محمد أحمد على</span>
+            <br>
+            <p>مدير قسم البرمجه والتطوير</p>
+
+        </ion-toolbar>
+
+        <ion-list>
+            <ion-item>
+                <ion-icon name="ios-contact"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp; {{ 'profile' | translate }}</ion-item>
+            <ion-item>
+                <ion-icon name="ios-share-outline"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;{{ 'orders' | translate }}</ion-item>
+            <ion-item (click)="logout()">
+                <ion-icon name="log-out" [style.transform]="languageInSildClass == 'en' ?'scaleX(-1)':'scaleX(1)'"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;{{ 'logout' | translate }}</ion-item>
+        </ion-list>
+
+    </ion-content>
+
+
+</ion-menu>
+
+<ion-menu *ngIf="languageInSildClass === 'ar'" [content]="content" dir="rtl" id="menuId" side="right">
+
+    <ion-content class="menuContent">
+
+        <ion-toolbar class="headermenu">
+            <img src="assets/img/user4.png">
+            <span>محمد أحمد على</span>
+            <br>
+            <p>مدير قسم البرمجه والتطوير</p>
+
+        </ion-toolbar>
+
+        <ion-list>
+            <ion-item (click)="openPage('Profile')">
+                <ion-icon name="ios-contact"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp; {{ 'profile' | translate }}</ion-item>
+            <ion-item>
+                <ion-icon name="ios-share-outline"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;{{ 'orders' | translate }}</ion-item>
+            <ion-item (click)="logout()">
+                <ion-icon name="log-out"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;{{ 'logout' | translate }}</ion-item>
+        </ion-list>
+
+    </ion-content>
+
+
+</ion-menu>
+
+
+
+
+
+<ion-nav id="nav" [root]="rootPage" dir="{{textDir}}" #content swipeBackEnabled="false">
+
+</ion-nav>
+
+<ion-nav id="nav" #rootNavController [root]="rootPage"></ion-nav> -->
+
+
+<ion-menu [content]="content">
+  <ion-header>
+
+
+
+    <ion-toolbar class="tool-ios">
+
+
+      <!-- <title>Hello , Jeniffer</title> -->
+
+      <ion-title class="menu-title" backgeound="primary">
+        <img class="home-logo-menu" src="assets/img/logo.png">
+        <br>
+
+        <!-- <br> -->
+        {{'Hello' | translate}} , {{name}} </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content [class.menu]>
+    <ion-list class="menu-list">
+
+      <button class="menu-btn" ion-item (click)="openPage('HomePage')">
+        <!-- <ion-icon class="menu-icon" name="ios-home-outline"></ion-icon> -->
+        <img class="menu-logo" src="assets/icon/home.jpg" alt="home"> {{'home' | translate}}
+      </button>
+
+      <button class="menu-btn" id="sidenav" ion-item (click)="menuItemHandler()">
+        <!-- <ion-icon class="menu-icon" name="ios-home-outline"></ion-icon> -->
+        <img class="menu-logo" src="assets/icon/Categories-Icon.png" alt="home"> {{'categories'| translate}}
+        <ion-icon class="arrow-cat" [name]="showSubmenu ? 'arrow-up' :'arrow-down'"></ion-icon>
+
+
+      </button>
+
+
+  
+
+      <ul  *ngFor="let cat of Category" class="list-unstyled category-list" [class.visible]="showSubmenu">
+        <!--  -->
+        <li class="submenu-item" (click)="searchProduct2(cat)" submenu-item>
+          {{cat.cat.name}}
+        </li>
+        
+
+      </ul>
+
+      <button class="menu-btn" ion-item (click)="openPage('AllOrdersPage')">
+        <img class="menu-logo" src="assets/icon/Orders-Icon.png" alt="home"> {{'order'| translate}}
+
+      </button>
+
+      <button class="menu-btn" ion-item (click)="openPage('WishListPage')">
+        <img class="menu-logo" src="assets/icon/wish.jpg" alt="home"> {{'wishlist' | translate}}
+      </button>
+
+      <button class="menu-btn" ion-item (click)="openPage('UserprofilePage')">
+        <img class="menu-logo" src="assets/icon/profile.jpg" alt="home"> {{'profile'| translate}}
+      </button>
+
+
+      <button class="menu-btn" ion-item (click)="openPage('AddressPage')">
+        <img class="menu-logo" src="assets/icon/address.jpg" alt="home">
+        <!-- <ion-icon class="menu-icon" name="ios-navigate-outline"></ion-icon> -->
+
+        {{'address'| translate}}
+      </button>
+
+
+      <button class="menu-btn" ion-item (click)="logout()">
+        <img class="menu-logo" src="assets/icon/logout.jpg" alt="home"> {{'logout'| translate}}
+      </button>
+      <hr class="myhr">
+
+      <button class="menu-btn" ion-item (click)="openPage('LanguagesPage')">
+        <img class="menu-logo" src="assets/icon/lang.jpg" alt="home"> {{'lang' | translate}}
+
+        <span class="fright text-capitalize">{{language1}}</span>
+
+      </button>
+
+
+      <button class="menu-btn" ion-item (click)="openPage('CurrencyPage')">
+        <img class="menu-logo" src="assets/icon/curr.jpg" alt="home"> {{'currency'| translate}}
+
+        <span class="fright text-uppercase" >{{currency}}</span>
+     
+      </button>
+      <hr class="myhr">
+
+      <button class="menu-btn" ion-item (click)="openPage('SupportPage')">
+        <img class="menu-logo" src="assets/icon/contact.jpg" alt="home"> {{'contact'| translate}}
+      </button>
+
+
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+
+
+<ion-nav  id="nav" #content [root]="rootPage"></ion-nav>

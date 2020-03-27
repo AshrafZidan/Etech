@@ -1,0 +1,236 @@
+import { ProfileuserServiceProvider } from './../../providers/profileuser-service/profileuser-service';
+import { ProductsServiceProvider } from './../../providers/products-service/products-service';
+import { HomePage } from './../home/home';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { NavController, MenuController, IonicPage, LoadingController, ViewController, ToastController, App } from 'ionic-angular';
+import 'rxjs/add/operator/catch';
+import { Device } from '@ionic-native/device'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Platform } from 'ionic-angular';
+import { TranslateService } from '@ngx-translate/core';
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////// General Classes /////////////////////////////////////////////
+
+import { MyApp } from '../../app/app.component';
+import { sessionData } from '../shared/session-data'
+import { setting } from '../../app/setting'
+import { Language } from '../../pages/language/language';
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////// Providers /////////////////////////////////////////////
+import { AuthentcationServices } from './../../providers/authentcation-services';
+import { stringify } from '@angular/core/src/util';
+
+
+
+@IonicPage()
+@Component({
+  selector: 'login-page',
+  templateUrl: 'login.html'
+})
+export class LoginPage {
+
+  //password-input
+  passwordType: string = 'password';
+  passwordIcon: string = 'eye-off';
+  Category:any = [];
+  currencies:any = [] ;
+
+
+  @Output() notfy:EventEmitter<string> = new EventEmitter <string>();
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////// public variables //////////////////////////////////////////
+
+  public userName: string = null;
+  public password: string = null;
+  public language: string;
+  
+
+  myForm: FormGroup;
+
+  ///////////////////////////////////////////////////////////// translate key //////////////////////////////////
+  public pleaseWait: string = null;
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////// constructor ///////////////////////////////////////////////
+
+  constructor(
+    public app: MyApp,
+    public apps: App,
+    public menuCtrl: MenuController,
+    private platform: Platform,
+    private builder: FormBuilder,
+    private loading: LoadingController,
+    public authServices: AuthentcationServices,
+    public navCtrl: NavController,
+    private device: Device,
+    private viewCtrl: ViewController,
+    public translate: TranslateService,
+    public toastCtrl: ToastController,
+    private ProductsService: ProductsServiceProvider,
+    private userServiceProvider:ProfileuserServiceProvider,
+  ) {
+
+
+    if (sessionData.is_log  && sessionData.userToken != null) {
+      this.app.openPage('HomePage');
+      
+    }
+   
+    //////////////////////////////////////////////////// operation ///////////////////////////////////////////////////
+
+    this.platform.registerBackButtonAction(() => {
+      this.platform.exitApp();
+    },0);
+    ///////////////////////////////////////////////// validate form //////////////////////////////////////////////
+    this.myForm = this.builder.group({
+      // 'username': ['', [Validators.required, Validators.minLength(11), Validators.pattern('^01[0-2]{1}[0-9]{8}$')]],
+      "username": ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$')])],
+      
+      'password': [Validators.required]
+    });
+
+    ////////////////////////////////////////////////////  translation operation ////////////////////////////////////////
+    this.language = app.translate.store.currentLang;
+    this.language = Language.newlang;
+    if (this.language == "ar") {
+      app.sideMenu = "right";
+      app.textDir = "rtl";
+    } else {
+      app.sideMenu = "left";
+      app.textDir = "ltr";
+    }
+    //////////////////////////////////////////////////////// get tarnslation Key ////////////////////////////////
+    this.translate.get(['pleaseWait']).subscribe((res) => {
+      this.pleaseWait = res.pleaseWait;
+    });
+
+
+    //disabled menu 
+    this.menuCtrl.enable(false)
+
+
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////// methods ///////////////////////////////////////////////////
+
+  login() {
+    //////////////////////////////// in side /////////////////////////////////////////////////
+    // const formValue = this.myForm.value;
+    /////////////////////////////////////////////////////////////////////////////////////////////
+    
+    this.authServices.userLogin(this.userName, this.password).subscribe(
+      data => {
+        sessionData.saveDataInsession(data);
+        sessionData.saveDataInLocalStorage();
+       
+        
+        
+        
+        this.getCategoray();
+
+       
+      }, error => {
+        this.presentToast('username or Password Incorrect');
+      }
+    );
+  }
+
+
+  /////////////////////////////////////////////////////////// open any page you want /////////////////////////////////
+  openPage(namePage) {
+    this.navCtrl.setRoot(namePage);
+  }
+
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////// General methods ///////////////////////////////////////////
+
+  private presentToast(text) {
+    let toast = this.toastCtrl.create({
+      message: text,
+      duration: 3000,
+      position: 'top'
+    });
+    toast.present();
+  }
+
+  hasError(field: string, error: string) {
+    const ctrl = this.myForm.get(field);
+    return ctrl.dirty && ctrl.hasError(error);
+  }
+
+  // hideShowPasswordFun
+  hideShowPassword() {
+
+    this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
+    this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
+  }
+
+  getCategoray() {
+
+    let loading = this.loading.create({
+      content: this.pleaseWait
+    });
+    loading.present();
+  
+    this.ProductsService.getCategoray().subscribe(
+      data => {
+        this.Category = [];
+        
+        
+        if (JSON.stringify(data.InnerData) != '{}') {
+          this.Category = data.InnerData;
+          localStorage.setItem('Category',JSON.stringify(this.Category));
+        
+
+        
+          
+        }
+     
+  
+      },error => {
+        loading.dismiss();
+        sessionData.clearDateFromLocalStorage();
+
+        this.app.openPage('LoginPage')
+        console.log("sss: ",error)
+       
+      });
+      
+     
+
+      this.userServiceProvider.getCurrencies().subscribe(
+        data => {
+      
+          this.currencies = data.InnerData;
+          this.currencies.forEach(element => {
+            if (element.code ==sessionData.currency ) {
+              
+              sessionData.currencySymbol = element.symbol;
+              localStorage.setItem('currencySymbol', element.symbol);
+              
+           
+            }
+          });
+          this.app.openPage('HomePage');
+          
+          loading.dismiss();
+        }
+        , error => {
+          // console.log("sss: ",error)
+          sessionData.clearDateFromLocalStorage();
+          this.app.openPage('LoginPage')
+          loading.dismiss();
+  })
+
+
+ 
+  }}

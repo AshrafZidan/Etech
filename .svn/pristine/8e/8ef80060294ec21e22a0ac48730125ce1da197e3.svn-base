@@ -1,0 +1,51 @@
+<ion-content padding class="login-form">
+    <div class="content">
+    <div class="logo animated fadeInDown">
+        <img src="assets/img/logo.png">
+    </div>
+    <form [formGroup]="myForm" (ngSubmit)="login()">
+
+        <ion-list>
+
+            <!-- mobNo. field -->
+            <ion-item class="item1 first-inpt animated fadeInDown">
+
+
+                <ion-input placeholder=" Email " type="text" formControlName="username"  [(ngModel)]="userName" ></ion-input>
+
+                
+            </ion-item>
+
+            <p class="validationHint" style="background: transparent;color: red" *ngIf="hasError('username', 'required')">{{ 'require' | translate }}</p>
+            <p class="validationHint"  style="background: transparent;color: red" *ngIf="hasError('username', 'pattern')">Enter correct Email </p>
+
+
+            <ion-item class="item2 last animated fadeInDown">
+
+
+                <ion-input class="" placeholder=" Password "  [type]="passwordType" formControlName="password" [(ngModel)]="password" >
+
+
+                </ion-input>
+
+                <ion-icon item-end [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
+
+            </ion-item>
+        </ion-list>
+
+
+      <button ion-button clear type="button" (click)="openPage('Forgetpassword')" class="animated fadeInDown forgetpassBtn pull-right">Forget Password ?</button>
+
+
+        <button ion-button block   class="animated fadeInDown app-white" [disabled]="!myForm.valid ">Sign In</button>
+    </form>
+
+
+
+
+    <p class="noRegister animated fadeInDown">
+      Don't Have An Account ?
+      <button ion-button clear class="top" (click)="openPage('Signup')">Sign Up</button>
+  </p>
+</div>
+</ion-content>

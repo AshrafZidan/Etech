@@ -1,0 +1,173 @@
+page-home {
+  position: relative;
+
+  .cart-empty{
+    margin: 24% auto;
+
+    @media only screen and (min-width: $breakpoint-phone) {
+    margin: 28% auto;
+    }
+    @media only screen and (min-width: $breakpoint-tablet) {
+      .cart-icon{
+        width: 220px !important;
+      }
+    margin: 33% auto;
+    }
+    @media only screen and (min-width: $breakpoint-desktop) {
+
+      .cart-icon{
+        width: 250px !important;
+      }
+      margin: 5% auto;
+    }
+
+    .cart-icon{
+      width: 170px;
+
+      font-size: 200px;
+      float: none !important;
+      // color: #bdbdbd !important;
+
+
+    }
+    .cart-title{
+      font-weight: 500;
+      margin-top: 20px;
+      letter-spacing: 1px;
+      font-size: 32px;
+      text-align: center;
+      margin-left: 4%;
+    }
+  }
+  
+  .menuu{
+    width:24px !important;
+  }
+  .home{
+  position: relative;
+
+    background: #f6f6f6;
+    position: relative;
+    .home-title{
+      padding:0 !important;
+      margin:0 !important;
+    }
+
+  .product-box{
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 7px;
+    border-radius: 7px;
+    padding-bottom: 5px;
+
+    .product-img{
+      width: 150px;
+      height: 150px;
+      padding: 15px;
+      @media only screen and (min-width: $breakpoint-phone) {
+        width: 200px;
+      }
+      @media only screen and (min-width: $breakpoint-tablet) {
+        width: 230px;
+      }
+      @media only screen and (min-width: $breakpoint-desktop) {
+        width: 250px;
+      }
+
+    }
+    .details{
+      margin-top: 15px;
+      .brand{
+        color:#969696;
+        margin: 0;
+        font-size: 16px;
+
+
+
+      }
+      .description{
+        line-height: 1.4;
+        margin: 0;
+        font-size: 15px;
+        font-weight: 600 !important;
+        color: #000;
+        margin-top: 5px;
+        letter-spacing: .5px;
+      }
+      .price{
+        margin-top: 1rem;
+    font-size: 17px;
+        color: $mainBackground;
+        font-weight: 600;
+
+      }
+    }
+  }
+}
+.filter{
+  position:fixed;
+  z-index: 10;
+  bottom: 7px;
+
+  right: 25px;
+  // left: 25px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  // line-height: 50px;
+  background: $mainBackground;
+  i{
+    font-size: 22px;
+  }
+
+}
+.toolbar-title {
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  margin: 0 !important;
+}
+.mybadge{
+  // padding: .15em 0.19em;
+  font-size: 12px;
+  position: absolute;
+  // top: -3px;
+  border-radius: 50%;
+  // right: 7px;
+  text-align: center;
+  // padding: 1px 5px;
+  margin-top: 2px;
+  margin-right: -2px;
+
+
+}
+
+.no-left{
+  padding-left: 0 !important;
+
+}
+.res-list{
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 2000;
+  display: none;
+}
+
+.toolbar-ios ion-title{
+  padding: 0 20px 1px;
+}
+}
+.chart-icon{
+  width: 27px !important;
+  // margin: 0 !important;
+}
+
+.car-icn{
+  padding-top: 4px;
+
+}

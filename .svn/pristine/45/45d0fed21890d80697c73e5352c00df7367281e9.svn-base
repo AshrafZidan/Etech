@@ -1,0 +1,43 @@
+<ion-content  center text-center padding class="type">
+
+
+
+  <h2 class="title animated fadeInDown">Please Select <br> Your Account Type</h2>
+
+  <ion-grid>
+      <ion-row>
+        <ion-col>
+            <div id="one" class="actived" (click)="DeskChange()">
+                <!-- <i class="fa fa-laptop"></i> -->
+                <img class="icon-desk" [src]="deskmage">
+                    <p>Computer Buyer</p>
+            </div>
+
+        </ion-col>
+
+
+        <ion-col>
+            <div (click)="mobileChange()" id="two">
+
+                <img class="icon-mob"  [src]="mobImage">
+                    <p>Mobile Buyer</p>
+            </div>
+
+        </ion-col>
+
+        </ion-row>
+    </ion-grid>
+
+
+
+    <p class="noRegister animated fadeInDown">
+      <button ion-button block clear class="app-white" (click)="openPage('Verifypage')">Submit</button>
+  </p>
+
+
+</ion-content>
+
+
+
+
+

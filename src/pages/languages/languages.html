@@ -1,0 +1,29 @@
+
+<ion-header>
+  <ion-navbar (click)="back()">
+    <ion-icon class="back-icon"  name="ios-arrow-round-back-outline"></ion-icon>
+    <ion-title class="page-title"> Languages </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list radio-group [(ngModel)]="language">
+    <ion-item *ngFor="let lang of Languages" >
+      <ion-label>{{lang.name}}</ion-label>
+      <ion-radio value="{{lang.language_code}}"></ion-radio>
+    </ion-item>
+    
+
+    <button ion-button block type="submit"
+    (click)="updateLanguage()"
+     class="currency-btn app-white app-btn-revese animated fadeInDown">save</button>
+  </ion-list>
+
+<!-- <p>{{language}}</p> -->
+
+
+
+
+</ion-content>

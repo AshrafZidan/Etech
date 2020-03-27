@@ -1,0 +1,118 @@
+page-ship-address {
+
+    .fixed-content , .content {
+    background: #f5f5f5;
+
+
+  }
+
+  .product-box{
+    padding-top: 5px;
+
+
+    .details{
+      // margin-top: 15px;
+      padding-left: 15px;
+
+      .brand{
+        color:#969696;
+        margin: 0;
+        font-size: 17px;
+      display: inline;
+
+
+
+      }
+      .description{
+        line-height: 1.4;
+        margin: 0;
+        font-size: 17px;
+        font-weight: 600 !important;
+        color: #000;
+        margin-top: 5px;
+        letter-spacing: .5px;
+      }
+      .price{
+        margin-top: 1rem;
+        color: $mainBackground;
+
+      }
+    }
+  }
+  .item{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background: #fff;
+
+    .btns {
+      // margin-top: 20px;
+
+      button{
+        background: transparent;
+        border: 1px solid #ccc;
+        padding: 10px 5px;
+        margin: 0;
+        border-bottom: none;
+        color:#5a5a5a;
+        &:focus{
+          outline-color: none !important;
+
+        }
+      }
+
+      .b1{
+        border-left: none !important;
+
+      }
+      .b2{
+        border-right: none !important;
+      }
+
+    }
+
+  }
+
+
+.txt{
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 0px;
+}
+.add-address{
+  color:$mainBackground;
+}
+.ch{
+  float: right;
+    padding-right: 10px;
+
+}
+
+
+
+.radio-md .radio-checked {
+border-color:#39b54a;}
+.radio-md .radio-icon  {
+
+    width: 20px;
+    height: 20px;
+}
+.radio-md .radio-inner  {
+  left: 3px;
+  top: 3px;
+  border-radius: 50%;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  // background-color: #3982b2;
+  background-color: #39b54a;
+
+}
+
+.phone{
+  margin-top: 8px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+}

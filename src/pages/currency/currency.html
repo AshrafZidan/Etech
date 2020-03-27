@@ -1,0 +1,38 @@
+<!--
+  Generated template for the LanguagesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar (click)="back()">
+    <ion-icon class="back-icon" name="ios-arrow-round-back-outline"></ion-icon>
+
+    <ion-title class="page-title"> Currency </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list radio-group [(ngModel)]="currency">
+    <ion-item class="currency-item" *ngFor="let curren of currencies">
+      <ion-label class="text-uppercase">{{curren.name}} <span>   </span> {{curren.symbol}}</ion-label>
+      <ion-radio value="{{curren.code}}"></ion-radio>
+    </ion-item>
+
+
+    <button ion-button block type="submit" 
+    (click)="saveCurrency()"
+    style="    margin-bottom: 20px;
+    " class="currency-btn app-white app-btn-revese animated fadeInDown">save</button>
+  </ion-list>
+
+
+
+
+
+
+</ion-content>

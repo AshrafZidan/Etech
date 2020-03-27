@@ -1,0 +1,254 @@
+<!--
+  Generated template for the SingleProductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+
+
+  <ion-navbar>
+    <ion-grid>
+      <!-- <div> -->
+      <ion-row>
+        <ion-col class="no-l no-padding" >
+          
+          <button class="custom-btn" ion-button >
+              <ion-icon class="back-icon " (click)="back()" name="ios-arrow-round-back-outline"></ion-icon>
+            </button>
+        </ion-col> 
+
+
+
+        <ion-col class="no-padding">
+          <ion-title class="home-title">
+            <img class="home-logo" src="assets/img/logo.png">
+            <!-- home logo -->
+          </ion-title>
+        </ion-col>
+
+        <ion-col>
+          <!-- OrderDetailsPage -->
+          <img class="home-logo chart-icon car-icn float-right" (click)="goToCartPage('CartPage')" src="assets/icon/cart-icon.png">
+
+          <span class="mybadge badge badge-danger">{{shipNumber}}</span>
+          <!-- <ion-icon class="cart-icon" name="ios-cart-outline" (click)="openpage('CartPage')">
+
+              </ion-icon> -->
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+
+
+    <ion-searchbar [(ngModel)]="search" (keyup.enter)="goToHomePage()"> </ion-searchbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-slides pager>
+
+
+    <img *ngIf="productImages.length == 0 " class="img-fluid i text-center product-img" src='https://via.placeholder.com/350x100'  alt="image"> 
+
+    <ion-slide *ngFor="let image of productImages">
+      <div class="product-box">
+        <img *ngIf="image.image" class="img-fluid i text-center product-img" src="{{image.image}}"  alt="image">
+      </div>
+    </ion-slide>
+
+<!-- <div *ngIf="!productImages[0].image">
+    <ion-slide  *ngFor="let image of productImages[0]" >
+      <div class="product-box">
+        <img  class="img-fluid i text-center product-img" src="{{image.image}}"  alt="image">
+      </div>
+    </ion-slide>
+  </div> -->
+  </ion-slides> 
+
+
+  <div class="product-details">
+    <h4 class="brand">
+      {{singleProduct.name}}
+    </h4>
+
+    <!-- <p class="description"> {{singleProduct.slug}}</p> -->
+
+
+    <h5 class="price"> {{singleProduct.price ==null ?0:singleProduct.price}}
+    
+      <span >{{currentSymbol}} </span>
+      
+      
+    </h5>
+    <form [formGroup]="optionsForm" (ngSubmit)="addCart()">
+    <div *ngFor="let item of final_vartions" class="div-item">
+
+      <p>{{item[0].extra_fields.title}}</p>
+      <!-- <p *ngFor="let ss of item">{{i.price == 0  }}</p> --> 
+     
+      <ion-item class="size-div">
+        <ion-select   (ionChange)="AddVartion($event)"  block class="size-select border-redu">
+          <ion-label class="text-center select-label">
+            <p class="text-center">Select {{item[0].extra_fields.title}}</p>
+          </ion-label>
+
+          <ion-option  [selected]="( render[item[0].extra_fields.title].id == it.id )" [value]="it "  *ngFor="let it of item  ">{{it.value}} 
+            <span *ngIf="it.price != 0 " class="inner-price"> ( {{it.price}} ) {{currentSymbol}}</span></ion-option>
+        </ion-select>
+
+
+      </ion-item> 
+
+  </div>
+      
+
+
+  
+
+
+    <div class="div-item">
+      <ion-row class="instock-row">
+        <ion-col col-5>
+
+          <p class="gr-color">In Stock</p>
+        </ion-col>
+   
+        <ion-col col-7>
+
+          <div class="qty-col">
+
+            <!--<ion-icon class="remove-icon" (click)="decrement()" name="remove"></ion-icon>-->
+            <img class="remove-icon" (click)="decrement()" src="assets/icon/minus.png">
+
+            <ion-input class="qty-inpt" disabled value="{{currentNumber}}" type="number" min=0>
+
+            </ion-input>
+            <!--<ion-icon class="add-icon" (click)="increment()" name="ios-add"></ion-icon>-->
+            <img class="adds-icon" (click)="increment()" src="assets/icon/Plus.png">
+
+
+          </div>
+        </ion-col>
+
+      </ion-row>
+    </div>
+
+    <div class="fav-btn">
+
+      <button ion-button block type="submit"  
+      [disabled]="this.currentNumber ==0"
+      class="ttop  app-white app-btn-revese animated fadeInDown no-shadow">Add to cart</button>
+      <span class="heaert" *ngIf="! singleProduct_Dir">
+
+        <ion-icon class="heart-icon " id="heart" (click)="addWihes()" ios="ios-heart" md="md-heart"></ion-icon>
+      </span>
+    </div>
+
+</form>
+
+
+
+  </div>
+
+
+  <div class="overview">
+    <h4 class="brand text-capitalize">
+      Overview
+    </h4>
+    <ul class="contai">
+      <li class="lead ">
+        {{singleProduct.desc}}
+      </li>
+
+      <!-- <li class="lead ">
+        With iphoneX , the device is the display . An all-new 5.8-inch Super Retina screen files the hand and dazzles the eyes
+      </li>
+
+      <li class="lead ">
+        With iphoneX , the device is the display . An all-new 5.8-inch Super Retina screen files the hand and dazzles the eyes
+      </li> -->
+    </ul>
+  </div>
+
+
+  <div class="overview">
+    <h4 class="brand spec text-capitalize">
+      specification
+    </h4>
+
+    <ion-grid class="contai">
+
+
+      <ion-row>
+        <ion-col>
+          <h5 class="left-info">Brand</h5>
+        </ion-col>
+        <ion-col>
+          <h6 class="bold rigrt-info text-center">{{singleProduct.name}}</h6>
+        </ion-col>
+      </ion-row>
+
+
+
+
+      <ion-row>
+        <ion-col>
+          <h5 class="left-info">Model</h5>
+        </ion-col>
+        <ion-col>
+          <h5 class="bold rigrt-info text-center">{{singleProduct.slug}} </h5>
+        </ion-col>
+      </ion-row> 
+
+
+
+      <ion-row *ngFor="let item of final_vartions">
+        <ion-col>
+          <h5 class="left-info">{{item[0].extra_fields.title}}</h5>
+        </ion-col>
+        <ion-col>
+            
+
+                
+          <h5  class="bold rigrt-info text-center"> {{item[0].value}}   </h5>
+        </ion-col>
+      </ion-row>
+
+
+
+<!-- 
+      <ion-row>
+        <ion-col>
+          <h5 class="left-info">Internal Memory</h5>
+        </ion-col>
+        <ion-col>
+          <h5 class="bold rigrt-info text-center"> {{ default_Memory}}</h5>
+        </ion-col>
+      </ion-row> -->
+
+<!-- 
+      <ion-row>
+        <ion-col>
+          <h5 class="left-info">Operating System</h5>
+        </ion-col>
+        <ion-col>
+          <h5 class="bold rigrt-info text-center">ios 11</h5>
+        </ion-col>
+      </ion-row> -->
+
+      <!-- <p class="view text-capitalize">view More </p> -->
+    </ion-grid>
+
+
+
+
+  </div>
+
+
+</ion-content>

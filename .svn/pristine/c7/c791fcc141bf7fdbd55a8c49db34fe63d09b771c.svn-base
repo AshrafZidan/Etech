@@ -1,0 +1,1807 @@
+{
+	"info": {
+		"_postman_id": "5d72a99d-ea69-4151-84b7-ce7865bd1dda",
+		"name": "E-tech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Authenticate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"user@e-techdistribution.com\",\n  \"password\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "http://api.e-techdistribution.com/api/authenticate",
+							"protocol": "http",
+							"host": [
+								"api",
+								"e-techdistribution",
+								"com"
+							],
+							"path": [
+								"api",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"first_name\":\"Ramy\",\n\t\"last_name\" :\"Mohamed\",\n\t\"email\" : \"anyyy@gmail.com\",\n\t\"password\": \"123456\",\n\t\"categories\": [1,2]\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzIyNzQ4MDYsImV4cCI6MTUzMjI3ODQwNiwibmJmIjoxNTMyMjc0ODA2LCJqdGkiOiJBbldZT1dtVlFrSDhLdHVjIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.TMLh6jZyYzplDDNE-ZB7NxCq_ErHZwO6xbBz5rroqoo"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "any@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzIyNzQ4MDYsImV4cCI6MTUzMjI3ODQwNiwibmJmIjoxNTMyMjc0ODA2LCJqdGkiOiJBbldZT1dtVlFrSDhLdHVjIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.TMLh6jZyYzplDDNE-ZB7NxCq_ErHZwO6xbBz5rroqoo"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "old_password",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "new_password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/change-password",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forget Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@htd.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/forget-password",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"forget-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzcyNjM2OTgsImV4cCI6MTUzNzI2NzI5OCwibmJmIjoxNTM3MjYzNjk4LCJqdGkiOiJDWTJoZ3JXcmxUWnFBQlZXIiwic3ViIjoxNywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.4MKEOe1YihSxYNZxOhXddt8DJUZLAwKn0jJjWC7rZtM"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/products?language=en&currency=gbp",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "currency",
+									"value": "gbp"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "singleProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzcyNjM2OTgsImV4cCI6MTUzNzI2NzI5OCwibmJmIjoxNTM3MjYzNjk4LCJqdGkiOiJDWTJoZ3JXcmxUWnFBQlZXIiwic3ViIjoxNywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.4MKEOe1YihSxYNZxOhXddt8DJUZLAwKn0jJjWC7rZtM"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/singleProduct?language=en&currency=usd&product_id=19",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"singleProduct"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "currency",
+									"value": "usd"
+								},
+								{
+									"key": "product_id",
+									"value": "19"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProductVariations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkuZS10ZWNoZGlzdHJpYnV0aW9uLmNvbVwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzY3NjI4MjUsImV4cCI6MTUzNjc2NjQyNSwibmJmIjoxNTM2NzYyODI1LCJqdGkiOiJrVjhybU5YQzlYcVBVOWRuIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.vdl-t6iPeGbwo8nOzgCtrYp6CL8s_GAO6oXDMSng1-c"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://api.e-techdistribution.com/api/product-variations?product_id=8&category_id=1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"e-techdistribution",
+								"com"
+							],
+							"path": [
+								"api",
+								"product-variations"
+							],
+							"query": [
+								{
+									"key": "product_id",
+									"value": "8"
+								},
+								{
+									"key": "category_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzcyNzUxMDEsImV4cCI6MTUzNzI3ODcwMSwibmJmIjoxNTM3Mjc1MTAxLCJqdGkiOiJUbEhRTDhYejFMeGt6RTBRIiwic3ViIjoxNywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.cmoOySUiSyLhdh-2rc0_mNJpPz-Wp830Sk15GUhEh4I"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"product_id\": [14],\n\t\"currency\": \"usd\",\n\t\"product_ids\": [\n\t\t\t19\n\t\t],\n\t\"quantities\": [\n\t\t\t5\n\t\t],\n\t\"product_total\": [\n\t\t\t500\n\t\t],\n\t\"payment_type\": 1,\n\t\"address_id\":1,\n\t\"options\":[\n\t\t\t{\n\t\t\t\t\"field_id\":1,\n\t\t\t\t\"value\":8,\n\t\t\t\t\"price\":100,\n\t\t\t\t\"product_id\": 14\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"field_id\":2,\n\t\t\t\t\"value\":8,\n\t\t\t\t\"price\":200,\n\t\t\t\t\"product_id\": 14\n\t\t\t}\n\t\t]\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/create-order",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"create-order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search-products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkuZS10ZWNoZGlzdHJpYnV0aW9uLmNvbVwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzgyNDE2NDAsImV4cCI6MTUzODI0NTI0MCwibmJmIjoxNTM4MjQxNjQwLCJqdGkiOiJ0V2dnTVRtdVJsNHpZZkZIIiwic3ViIjoyMSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.CJ9oW0mCFz_3qfPwwWVYC2uF7TEGGaoKebXm6ZCXJ7A"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://api.e-techdistribution.com/api/search-products?text=sam&language=en&currency=gbp",
+							"protocol": "http",
+							"host": [
+								"api",
+								"e-techdistribution",
+								"com"
+							],
+							"path": [
+								"api",
+								"search-products"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "sam"
+								},
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "currency",
+									"value": "gbp"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view-wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzcyNjM2OTgsImV4cCI6MTUzNzI2NzI5OCwibmJmIjoxNTM3MjYzNjk4LCJqdGkiOiJDWTJoZ3JXcmxUWnFBQlZXIiwic3ViIjoxNywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.4MKEOe1YihSxYNZxOhXddt8DJUZLAwKn0jJjWC7rZtM"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/view-wishlist?currency=usd&language=en",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"view-wishlist"
+							],
+							"query": [
+								{
+									"key": "currency",
+									"value": "usd"
+								},
+								{
+									"key": "language",
+									"value": "en"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addWish",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzQwODI0MDMsImV4cCI6MTUzNDA4NjAwMywibmJmIjoxNTM0MDgyNDAzLCJqdGkiOiJlNUw5OWpiUjd5STRqTXltIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.p8Mmk32oPmVOoye5apO41sV6vtBV7lqo723APJPOHck"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/add-wish",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"add-wish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeWish",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzQ2ODM3MzcsImV4cCI6MTUzNDY4NzMzNywibmJmIjoxNTM0NjgzNzM3LCJqdGkiOiI3SlVCOVVWT2VacTBLTDd3Iiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.YmJK_MRfqiUCLQ3Qph-GY0wFKfUAs5-U1X_8WSnqv9Q"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/remove-wish?product_id=3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"remove-wish"
+							],
+							"query": [
+								{
+									"key": "product_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cart Items",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzY1MDU0NDAsImV4cCI6MTUzNjUwOTA0MCwibmJmIjoxNTM2NTA1NDQwLCJqdGkiOiJkeXJ3d1NGU3VxZnZPUVF0Iiwic3ViIjoxNywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.TV7JORSEg_nLF7dKxLgsH3A8AZdPJeMdEcV6C2JVsoc"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"products\": [14],\n\t\"language\": \"en\",\n\t\"currency\": \"usd\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/cart-items",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cart-items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkuZS10ZWNoZGlzdHJpYnV0aW9uLmNvbVwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzUzNjAzNzEsImV4cCI6MTUzNTM2Mzk3MSwibmJmIjoxNTM1MzYwMzcxLCJqdGkiOiJjMGw0dDlmeWcyQjFwWkh6Iiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.eCoySSNO-sJ5OGni_XsgiOkQRObaSnOu71InnSvGus4"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"language\": \"en\",\n\t\"currency\": \"usd\"\n}"
+						},
+						"url": {
+							"raw": "http://api.e-techdistribution.com/api/all-orders",
+							"protocol": "http",
+							"host": [
+								"api",
+								"e-techdistribution",
+								"com"
+							],
+							"path": [
+								"api",
+								"all-orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placeOrder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzQ2ODA5MTQsImV4cCI6MTUzNDY4NDUxNCwibmJmIjoxNTM0NjgwOTE0LCJqdGkiOiJFSjNNT0VHcENybTZFMklXIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.NGmYnGAj-kHrlKWVMM4rHYj_8yxSIGvO6uWiRz2bkJ8"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"product_id\": [14],\n\t\"currency\": \"usd\",\n\t\"product_ids\": [\n\t\t\t19\n\t\t],\n\t\"quantities\": [\n\t\t\t5\n\t\t],\n\t\"product_total\": [\n\t\t\t500\n\t\t],\n\t\"payment_type\": 1,\n\t\"address_id\":1,\n\t\"options\":[\n\t\t\t{\n\t\t\t\t\"field_id\":1,\n\t\t\t\t\"value\":8,\n\t\t\t\t\"price\":100,\n\t\t\t\t\"product_id\": 14\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"field_id\":2,\n\t\t\t\t\"value\":8,\n\t\t\t\t\"price\":200,\n\t\t\t\t\"product_id\": 14\n\t\t\t}\n\t],\n\t\"_comment\" : \"payment type 1 equal Wire transfere & payment type 2 equal paypal\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/place-order",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"place-order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzU4ODMyMzMsImV4cCI6MTUzNTg4NjgzNCwibmJmIjoxNTM1ODgzMjM0LCJqdGkiOiJ1MHFZcnVZQk1rYUFlc0pHIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.QdvuvES_7ZJf8uRbWrd9trAUlO7tVoAsAtPW5nQo9CY"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"products\": [4],\n\t\"language\": \"en\",\n\t\"currency\": \"usd\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/order-details?language=en&order_number=KX0SNS7JWHO",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"order-details"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "order_number",
+									"value": "KX0SNS7JWHO"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "shippingAddress",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzQ2ODE2MTUsImV4cCI6MTUzNDY4NTIxNSwibmJmIjoxNTM0NjgxNjE1LCJqdGkiOiI4TWRpdXU5dUZ1MXZTMGM3Iiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.q9_QcF06oR3zf74UBV9ZYZeXC-I-tJ07SYKFfa4iPL4"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"products\": [4],\n\t\"language\": \"en\",\n\t\"currency\": \"usd\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/shippingAddress",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"shippingAddress"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "category-products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkuZS10ZWNoZGlzdHJpYnV0aW9uLmNvbVwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1Mzg0MDk3MjcsImV4cCI6MTUzODQxMzMyNywibmJmIjoxNTM4NDA5NzI3LCJqdGkiOiJZZmN3Y1MxVHdLSVpNbnNLIiwic3ViIjoyMSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.KyVUI1MxeJMy1RNzIadMKwDBe1rRmQGf5fg-N5u2Bfw"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://api.e-techdistribution.com/api/category-products?currency=gpb&category_id=1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"e-techdistribution",
+								"com"
+							],
+							"path": [
+								"api",
+								"category-products"
+							],
+							"query": [
+								{
+									"key": "currency",
+									"value": "gpb"
+								},
+								{
+									"key": "category_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkuZS10ZWNoZGlzdHJpYnV0aW9uLmNvbVwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1Mzg0MDk3MjcsImV4cCI6MTUzODQxMzMyNywibmJmIjoxNTM4NDA5NzI3LCJqdGkiOiJZZmN3Y1MxVHdLSVpNbnNLIiwic3ViIjoyMSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.KyVUI1MxeJMy1RNzIadMKwDBe1rRmQGf5fg-N5u2Bfw"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://api.e-techdistribution.com/api/user-categories",
+							"protocol": "http",
+							"host": [
+								"api",
+								"e-techdistribution",
+								"com"
+							],
+							"path": [
+								"api",
+								"user-categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile and User",
+			"item": [
+				{
+					"name": "change account type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzI4NzIwODcsImV4cCI6MTUzMjg3NTY4NywibmJmIjoxNTMyODcyMDg3LCJqdGkiOiJiR3VSbzY5UWw2amQyenFTIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.rLcOrsrt7SAy3QBifj9vmT34K6I2QX77uUkaLRD7ih0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\": \"1\",\n\t\"account_type\": \"2\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/change-account-type?account_type=2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"change-account-type"
+							],
+							"query": [
+								{
+									"key": "account_type",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzcyNjM2OTgsImV4cCI6MTUzNzI2NzI5OCwibmJmIjoxNTM3MjYzNjk4LCJqdGkiOiJDWTJoZ3JXcmxUWnFBQlZXIiwic3ViIjoxNywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.4MKEOe1YihSxYNZxOhXddt8DJUZLAwKn0jJjWC7rZtM"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\": \"1\",\n\t\"account_type\": \"2\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get-user-by-id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get-user-by-id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Addresses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkuZS10ZWNoZGlzdHJpYnV0aW9uLmNvbVwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzQ2OTAxNzIsImV4cCI6MTUzNDY5Mzc3MiwibmJmIjoxNTM0NjkwMTcyLCJqdGkiOiJFUlVxRmIxdkhPZ0RxT0NRIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.JscfhQJsf4ZKeLotfIytM6YFKHeU9GA_GtJPC91zRYQ"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\": \"1\",\n\t\"account_type\": \"2\"\n}"
+						},
+						"url": {
+							"raw": "http://api.e-techdistribution.com/api/get-user-addresses",
+							"protocol": "http",
+							"host": [
+								"api",
+								"e-techdistribution",
+								"com"
+							],
+							"path": [
+								"api",
+								"get-user-addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-user-address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkuZS10ZWNoZGlzdHJpYnV0aW9uLmNvbVwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzUzNjAzNzEsImV4cCI6MTUzNTM2Mzk3MSwibmJmIjoxNTM1MzYwMzcxLCJqdGkiOiJjMGw0dDlmeWcyQjFwWkh6Iiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.eCoySSNO-sJ5OGni_XsgiOkQRObaSnOu71InnSvGus4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\": \"1\",\n\t\"account_type\": \"2\"\n}"
+						},
+						"url": {
+							"raw": "http://api.e-techdistribution.com/api/get-user-address",
+							"protocol": "http",
+							"host": [
+								"api",
+								"e-techdistribution",
+								"com"
+							],
+							"path": [
+								"api",
+								"get-user-address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-languages",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzQ2ODkyOTAsImV4cCI6MTUzNDY5Mjg5MCwibmJmIjoxNTM0Njg5MjkwLCJqdGkiOiJPeFNTQmE5SlNKcXBwNm56Iiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.K7N1K_7UGdmfKIS0ig2qG7Z_dSZTNdEIUkr7-s-ImSA"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\": \"1\",\n\t\"account_type\": \"2\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get-languages",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get-languages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-currencies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzIyNzQ4MDYsImV4cCI6MTUzMjI3ODQwNiwibmJmIjoxNTMyMjc0ODA2LCJqdGkiOiJBbldZT1dtVlFrSDhLdHVjIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.TMLh6jZyYzplDDNE-ZB7NxCq_ErHZwO6xbBz5rroqoo"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\": \"1\",\n\t\"account_type\": \"2\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get-currencies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get-currencies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-address-by-id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkuZS10ZWNoZGlzdHJpYnV0aW9uLmNvbVwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzUzNjAzNzEsImV4cCI6MTUzNTM2Mzk3MSwibmJmIjoxNTM1MzYwMzcxLCJqdGkiOiJjMGw0dDlmeWcyQjFwWkh6Iiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.eCoySSNO-sJ5OGni_XsgiOkQRObaSnOu71InnSvGus4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"address_id\": \"5\",\n\t\"street_address\": \"street street street street\",\n\t\"city\": \"city city city city\",\n\t\"zip_code\": \"32958\",\n\t\"country\": \"Egypt\",\n\t\"phone_number\": \"0101010101010\",\n\t\"address_label\": \"Address Label\"\n}"
+						},
+						"url": {
+							"raw": "http://api.e-techdistribution.com/api/update-address-by-id",
+							"protocol": "http",
+							"host": [
+								"api",
+								"e-techdistribution",
+								"com"
+							],
+							"path": [
+								"api",
+								"update-address-by-id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-user-language",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzQ2ODM3MzcsImV4cCI6MTUzNDY4NzMzNywibmJmIjoxNTM0NjgzNzM3LCJqdGkiOiI3SlVCOVVWT2VacTBLTDd3Iiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.YmJK_MRfqiUCLQ3Qph-GY0wFKfUAs5-U1X_8WSnqv9Q"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\": \"2\",\n\t\"address_id\": \"2\",\n\t\"new_address\": \"the address has been updated\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/update-user-language?language=ar",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"update-user-language"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "ar"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-user-currency",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzIyNzQ4MDYsImV4cCI6MTUzMjI3ODQwNiwibmJmIjoxNTMyMjc0ODA2LCJqdGkiOiJBbldZT1dtVlFrSDhLdHVjIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.TMLh6jZyYzplDDNE-ZB7NxCq_ErHZwO6xbBz5rroqoo"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\": \"2\",\n\t\"address_id\": \"2\",\n\t\"new_address\": \"the address has been updated\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/update-user-currency?currency_code=EGP",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"update-user-currency"
+							],
+							"query": [
+								{
+									"key": "currency_code",
+									"value": "EGP"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addUserAddress",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzQwNjAzMzUsImV4cCI6MTUzNDA2MzkzNSwibmJmIjoxNTM0MDYwMzM1LCJqdGkiOiI4cjhySmJpV3VoNmRIOXExIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.rHChIJ0gmHZNSmiXpiy4dna4Et54FLtwtk3HaNosJ2g"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"street_address\": \"st\",\n\t\"city\": \"city\",\n\t\"zip_code\": \"32958\",\n\t\"country\": \"Egypt\",\n\t\"phone_number\": \"0101010101010\",\n\t\"address_label\": \"Address\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/add-user-address",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"add-user-address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAddressById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkuZS10ZWNoZGlzdHJpYnV0aW9uLmNvbVwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzUzNjAzNzEsImV4cCI6MTUzNTM2Mzk3MSwibmJmIjoxNTM1MzYwMzcxLCJqdGkiOiJjMGw0dDlmeWcyQjFwWkh6Iiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.eCoySSNO-sJ5OGni_XsgiOkQRObaSnOu71InnSvGus4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"address_id\": \"3\"\n}"
+						},
+						"url": {
+							"raw": "http://api.e-techdistribution.com/api/delete-user-address",
+							"protocol": "http",
+							"host": [
+								"api",
+								"e-techdistribution",
+								"com"
+							],
+							"path": [
+								"api",
+								"delete-user-address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkuZS10ZWNoZGlzdHJpYnV0aW9uLmNvbVwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzUzNjAzNzEsImV4cCI6MTUzNTM2Mzk3MSwibmJmIjoxNTM1MzYwMzcxLCJqdGkiOiJjMGw0dDlmeWcyQjFwWkh6Iiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.eCoySSNO-sJ5OGni_XsgiOkQRObaSnOu71InnSvGus4"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Ramy",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://api.e-techdistribution.com/api/update-profile",
+							"protocol": "http",
+							"host": [
+								"api",
+								"e-techdistribution",
+								"com"
+							],
+							"path": [
+								"api",
+								"update-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkuZS10ZWNoZGlzdHJpYnV0aW9uLmNvbVwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzQ2OTAxNzIsImV4cCI6MTUzNDY5Mzc3MiwibmJmIjoxNTM0NjkwMTcyLCJqdGkiOiJFUlVxRmIxdkhPZ0RxT0NRIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.JscfhQJsf4ZKeLotfIytM6YFKHeU9GA_GtJPC91zRYQ"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://api.e-techdistribution.com/api/logout",
+							"protocol": "http",
+							"host": [
+								"api",
+								"e-techdistribution",
+								"com"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkuZS10ZWNoZGlzdHJpYnV0aW9uLmNvbVwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1Mzc5NTE3NDEsImV4cCI6MTUzNzk1NTM0MSwibmJmIjoxNTM3OTUxNzQxLCJqdGkiOiJSckh6Qldia0gwa3hDZTBsIiwic3ViIjoyMSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.fn-Tu5f-28um9-wuvb1N_JlMMho-9D6c3NuVgoQWhEU"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "language",
+									"value": "en",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://api.e-techdistribution.com/api/categories?language=en",
+							"protocol": "http",
+							"host": [
+								"api",
+								"e-techdistribution",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Variations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzcyNjM2OTgsImV4cCI6MTUzNzI2NzI5OCwibmJmIjoxNTM3MjYzNjk4LCJqdGkiOiJDWTJoZ3JXcmxUWnFBQlZXIiwic3ViIjoxNywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.4MKEOe1YihSxYNZxOhXddt8DJUZLAwKn0jJjWC7rZtM"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "language",
+									"value": "en",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/variations?category_id=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"variations"
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "UserAuth",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkuZS10ZWNoZGlzdHJpYnV0aW9uLmNvbVwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzgyNDE2NDAsImV4cCI6MTUzODI0NTI0MCwibmJmIjoxNTM4MjQxNjQwLCJqdGkiOiJ0V2dnTVRtdVJsNHpZZkZIIiwic3ViIjoyMSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.CJ9oW0mCFz_3qfPwwWVYC2uF7TEGGaoKebXm6ZCXJ7A"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": [23],\n\t\"options\": [\"16 GB\"],\n\t\"language\": \"en\",\n\t\"currency\": \"gbp\"\n}"
+						},
+						"url": {
+							"raw": "http://api.e-techdistribution.com/api/filter",
+							"protocol": "http",
+							"host": [
+								"api",
+								"e-techdistribution",
+								"com"
+							],
+							"path": [
+								"api",
+								"filter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoZW50aWNhdGUiLCJpYXQiOjE1MzE3NDY5MzUsImV4cCI6MTUzMTc1MDUzNSwibmJmIjoxNTMxNzQ2OTM1LCJqdGkiOiJjVjZSeVRTS3VjR3NYZjRpIiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.1jVBki8aRBmgDeWCLpL9XithZVYFuUYGxM6tGyfqqkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://api.e-techdistribution.com/api/all-categories?language=en",
+							"protocol": "http",
+							"host": [
+								"api",
+								"e-techdistribution",
+								"com"
+							],
+							"path": [
+								"api",
+								"all-categories"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTAxMDU4OTQ0NyIsIm5hbWUiOiJFLVRlY2giLCJpYXQiOjE1MTYyMzkwMjJ9.EBX965FnplRpi4A670D9InjB2EtqeGrJUvmp6czaIcU",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "dd7363e5-4208-4cc7-983c-368e192135ad",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b4ab3c5d-a7c1-4a3c-85e1-7002f9bf02ca",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
