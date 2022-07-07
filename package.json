@@ -51,7 +51,7 @@
     "ionic-plugin-keyboard": "^2.2.1",
     "ionic-select-searchable": "^2.7.2",
     "ionicons": "3.0.0",
-    "moment": "^2.18.1",
+    "moment": "^2.29.4",
     "phonegap-plugin-barcodescanner": "^6.0.8",
     "rxjs": "5.4.0",
     "sw-toolbox": "3.6.0",
